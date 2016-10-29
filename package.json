@@ -49,5 +49,8 @@
       "examples/build.js",
       "dist/**"
     ]
+  },
+  "dependencies": {
+    "annyang": "^2.6.0"
   }
 }

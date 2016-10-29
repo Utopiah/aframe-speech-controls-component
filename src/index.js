@@ -4,12 +4,13 @@ if (typeof AFRAME === 'undefined') {
   throw new Error('Component attempted to register before AFRAME was available.');
 }
 
+var annyang = require('annyang');
 /**
  * Speech Controls component for A-Frame.
  */
 AFRAME.registerComponent('speech-controls', {
   schema: {
-    positionStep: {default: 0},
+    positionStep: {default: 1},
   },
 
   /**
@@ -21,7 +22,21 @@ AFRAME.registerComponent('speech-controls', {
    * Called once when component is attached. Generally for initial setup.
    */
   init: function () {
+    console.log('init...');
+    if (annyang) {
+      // Let's define a command.
+      var commands = {
+        'right': this.cmd_move_right(),
+      };
 
+
+      // Add our commands to annyang
+      annyang.addCommands(commands);
+
+      // Start listening.
+      annyang.start();
+      console.log('annyang ok');
+    }
   },
 
   /**
@@ -54,5 +69,11 @@ AFRAME.registerComponent('speech-controls', {
    */
   play: function () {
 
-  }
+  },
+
+  cmd_move_right: function(){
+			console.log('moved right');
+			  var position = this.el.getAttribute('position');
+			  this.el.setAttribute('position', {x: position.x + 1, y: position.y, z: position.z  } );
+		  }
 });
