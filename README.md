@@ -2,7 +2,7 @@
 
 A Speech Controls component for [A-Frame](https://aframe.io).
 
-![http://vatelier.net/MyDemo/aframe-speech-controls-component/aframe-speech-controls.jpg](https://www.youtube.com/watch?v=n_jMiZa5SXcA)
+[![ScreenShot](http://vatelier.net/MyDemo/aframe-speech-controls-component/aframe-speech-controls.jpg)](https://www.youtube.com/watch?v=n_jMiZa5SXcA)
 
 ### API
 
